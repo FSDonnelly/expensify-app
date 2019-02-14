@@ -33,7 +33,7 @@ test('should setup add expense action object with provided values', () => {
             ...expenseData,
             id: expect.any(String)
         }
-    })
+    });
 });
 
 test('should setup add expense action object with default values', () => {
@@ -47,5 +47,5 @@ test('should setup add expense action object with default values', () => {
             amount: 0,
             createdAt: 0
         }
-    })
+    });
 });
