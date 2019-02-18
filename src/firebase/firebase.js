@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database'
+
 
 
 // Initialize Firebase
@@ -15,22 +17,86 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: 'Frank',
-    age: 38,
-    isCool: true,
-    location: {
-        city: 'San Diego',
-        state: 'California'
-    }
-});
 
-// database.ref().set('This is my data');
+export { firebase, database as default };
 
-database.ref('age').set(39);
-database.ref('location/city').set('Sacramento');
 
-database.ref('attributes').set({
-    height: 72,
-    weight: 185
-});
+
+
+// child_removed 
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
+// database.ref('expenses')
+//     .once('value')
+//     .then((snapshot) => {
+//         const expenses = [];
+
+//         snapshot.forEach((childSnapshot) => {
+//             expenses.push({
+//                 id: childSnapshot.key,
+//                 ...childSnapshot.val()
+//             });
+//         });
+
+//         console.log(expenses)
+//     });
+
+// database.ref('expenses')
+//     .on('value',
+//         (snapshot) => {
+//             const expenses = [];
+
+//             snapshot.forEach((childSnapshot) => {
+//                 expenses.push({
+//                     id: childSnapshot.key,
+//                     ...childSnapshot.val()
+//                 });
+//             });
+
+//             console.log(expenses)
+//         });
+
+// database.ref('expenses').push({
+//     description: 'Rent',
+//     note: '',
+//     amount: 109500,
+//     createdAt: 976123498763
+// });
+
+// database.ref('expenses').push({
+//     description: 'Phone Bill',
+//     note: '',
+//     amount: 5900,
+//     createdAt: 976123498763
+// });
+
+
+// database.ref('expenses').push({
+//     description: 'Coffee',
+//     note: '',
+//     amount: 350,
+//     createdAt: 976123498763
+// });
+
+       // }); {
+    //     description: 'Gum',
+    //     note: 'pack of gum',
+    //     amount: 150,
+    //     createdAt: 1000,
+    // }, {
+    //     description: 'Food',
+    //     note: 'Cheese Burger',
+    //     amount: 850,
+    //     createdAt: 2000,
+    // });
