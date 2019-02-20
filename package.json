@@ -1,6 +1,10 @@
 {
   "name": "expensify-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.14.2",
+    "yarn": "1.13.0"
+  },
   "main": "index.js",
   "author": "Frank Donnelly",
   "license": "MIT",
@@ -11,7 +15,7 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
-  },
+  }, 
   "dependencies": {
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
